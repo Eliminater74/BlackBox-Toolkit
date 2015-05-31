@@ -74,7 +74,7 @@ public class SplashView extends View {
                 while (true) {
                     try {
                         Thread.sleep(17);
-                        rotate++;
+
                         ((Activity) getContext()).runOnUiThread(new Runnable() {
                             @Override
                             public void run() {

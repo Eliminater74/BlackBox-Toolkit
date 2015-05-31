@@ -9,6 +9,7 @@ package com.grarak.kerneladiutor.fragments.information;
 
 // imports
 
+import android.content.DialogInterface;
 import android.content.res.Configuration;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -30,6 +31,9 @@ import com.grarak.kerneladiutor.elements.CardViewItem;
 import com.grarak.kerneladiutor.fragments.RecyclerViewFragment;
 import com.grarak.kerneladiutor.utils.Constants;
 import com.grarak.kerneladiutor.utils.Utils;
+import com.grarak.kerneladiutor.utils.root.RootFile;
+import com.grarak.kerneladiutor.utils.root.RootUtils;
+import com.grarak.kerneladiutor.utils.tools.Recovery;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -112,38 +116,6 @@ public class FrequencyTableFragment extends RecyclerViewFragment implements Cons
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.frequency_table_menu, menu);
         super.onCreateOptionsMenu(menu, inflater);
-    }
-
-    /**
-     * called to handle a menu event
-     */
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // what it do maybe
-        switch (item.getItemId()) {
-        /* pressed the load menu button */
-            case R.id.menu_refresh:
-                refreshData();
-                break;
-            case R.id.menu_reset:
-                try {
-                    cpuSpyApp.getCpuStateMonitor().setOffsets();
-                } catch (CpuStateMonitor.CpuStateMonitorException e) {
-                    e.printStackTrace();
-                }
-
-                cpuSpyApp.saveOffsets(getActivity());
-                updateView();
-                break;
-            case R.id.menu_restore:
-                cpuSpyApp.getCpuStateMonitor().removeOffsets();
-                cpuSpyApp.saveOffsets(getActivity());
-                updateView();
-                break;
-        }
-
-        // made it
-        return true;
     }
 
     /**
