@@ -5,11 +5,11 @@ android {
     buildToolsVersion "22.0.1"
 
     defaultConfig {
-        applicationId "com.grarak.kerneladiutor"
+        applicationId "in.kunalkene1797.blackboxtoolkit"
         minSdkVersion 14
         targetSdkVersion 22
         versionCode 89
-        versionName "0.9.4.2.2 beta"
+        versionName "1.0"
     }
     buildTypes {
         release {
