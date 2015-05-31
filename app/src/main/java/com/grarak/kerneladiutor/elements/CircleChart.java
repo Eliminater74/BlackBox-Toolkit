@@ -53,7 +53,8 @@ public class CircleChart extends View {
     public CircleChart(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
 
-        mCircleColor = getResources().getColor(R.color.circlebar_text);
+        mCircleColor = getResources().getColor(Utils.DARKTHEME ? R.color.circlebar_background_light
+                : R.color.circlebar_background_dark);
         mPadding = getResources().getDimensionPixelSize(R.dimen.circlechart_padding);
         mTextsize = getResources().getDimensionPixelSize(R.dimen.circlechart_textsize);
 
