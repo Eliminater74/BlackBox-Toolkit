@@ -59,7 +59,6 @@ import com.grarak.kerneladiutor.fragments.kernel.ThermalFragment;
 import com.grarak.kerneladiutor.fragments.kernel.VMFragment;
 import com.grarak.kerneladiutor.fragments.kernel.WakeFragment;
 import com.grarak.kerneladiutor.fragments.other.AboutusFragment;
-import com.grarak.kerneladiutor.fragments.other.FAQFragment;
 import com.grarak.kerneladiutor.fragments.other.SettingsFragment;
 import com.grarak.kerneladiutor.fragments.tools.BackupFragment;
 import com.grarak.kerneladiutor.fragments.tools.BuildpropFragment;
@@ -129,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements Constants {
         context = this;
 
         // Check if darktheme is in use and cache it as boolean
-        Utils.DARKTHEME = Utils.getBoolean("darktheme", false, this);
+        Utils.DARKTHEME = Utils.getBoolean("darktheme", true, this);
         if (Utils.DARKTHEME) super.setTheme(R.style.AppThemeDark);
 
         // Show a dialog if user is running a beta version

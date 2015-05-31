@@ -42,6 +42,7 @@ public class AboutusFragment extends RecyclerViewFragment {
         super.init(savedInstanceState);
 
         dev();
+        core_app();
         licenseInit();
         appSourceInit();
         featureRequestInit();
@@ -59,7 +60,15 @@ public class AboutusFragment extends RecyclerViewFragment {
         });
 
         addView(mAppSourceCard);
+
     }
+    private void core_app() {
+        CardViewItem.DCardView mAppSourceCard = new CardViewItem.DCardView();
+        mAppSourceCard.setTitle(getString(R.string.core_app));
+        mAppSourceCard.setDescription(getString(R.string.core_app_summary));
+        addView(mAppSourceCard);
+    }
+
     private void licenseInit() {
         CardViewItem.DCardView mLicenseCard = new CardViewItem.DCardView();
         mLicenseCard.setTitle(getString(R.string.license));

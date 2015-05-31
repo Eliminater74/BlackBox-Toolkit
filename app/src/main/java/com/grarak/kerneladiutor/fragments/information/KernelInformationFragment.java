@@ -17,6 +17,8 @@
 package com.grarak.kerneladiutor.fragments.information;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 
 import com.grarak.kerneladiutor.R;
 import com.grarak.kerneladiutor.elements.CardViewItem;
@@ -34,6 +36,15 @@ public class KernelInformationFragment extends RecyclerViewFragment {
     @Override
     public boolean showApplyOnBoot() {
         return false;
+    }
+
+    /**
+     * called when we want to inflate the menu
+     */
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.kernel_information, menu);
+        super.onCreateOptionsMenu(menu, inflater);
     }
 
     @Override

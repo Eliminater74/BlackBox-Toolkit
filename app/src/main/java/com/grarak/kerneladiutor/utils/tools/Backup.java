@@ -131,9 +131,9 @@ public class Backup {
                 folder = "fota";
                 break;
         }
-        folder = Utils.getInternalStorage() + "/KernelAdiutor/" + folder;
+        folder = Utils.getInternalStorage() + "/BlackBoxKit/" + folder;
         if (Utils.existFile(folder)) return folder;
-        return "/sdcard/KernelAdiutor/" + folder;
+        return "/sdcard/BlackBoxKit/" + folder;
     }
 
     public static String getBootPartition() {
