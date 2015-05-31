@@ -21,6 +21,7 @@ import android.os.Bundle;
 import com.grarak.kerneladiutor.R;
 import com.grarak.kerneladiutor.elements.CardViewItem;
 import com.grarak.kerneladiutor.fragments.RecyclerViewFragment;
+import com.grarak.kerneladiutor.utils.Utils;
 import com.grarak.kerneladiutor.utils.kernel.Info;
 
 /**
@@ -28,18 +29,33 @@ import com.grarak.kerneladiutor.utils.kernel.Info;
  */
 public class KernelInformationFragment extends RecyclerViewFragment {
 
+    private final String UPDATE_SOURCE = "http://kunalkene1797.in/downloads/";
+
     @Override
     public boolean showApplyOnBoot() {
         return false;
     }
 
     @Override
+
     public void init(Bundle savedInstanceState) {
+
         super.init(savedInstanceState);
 
         CardViewItem.DCardView kernelVersionCard = new CardViewItem.DCardView();
         kernelVersionCard.setTitle(getString(R.string.kernel_version));
         kernelVersionCard.setDescription(Info.getKernelVersion());
+
+
+        CardViewItem.DCardView kernelUpdateCard = new CardViewItem.DCardView();
+        kernelUpdateCard.setTitle(getString(R.string.update_version));
+        kernelUpdateCard.setDescription(getString(R.string.update_version_information));
+        kernelUpdateCard.setOnDCardListener(new CardViewItem.DCardView.OnDCardListener() {
+            @Override
+            public void onClick(CardViewItem.DCardView dCardView) {
+                Utils.launchUrl(getActivity(), UPDATE_SOURCE);
+            }
+        });
 
         CardViewItem.DCardView cpuCard = new CardViewItem.DCardView();
         cpuCard.setTitle(getString(R.string.cpu_information));
@@ -50,6 +66,7 @@ public class KernelInformationFragment extends RecyclerViewFragment {
         memCard.setDescription(Info.getMemInfo());
 
         addView(kernelVersionCard);
+        addView(kernelUpdateCard);
         addView(cpuCard);
         addView(memCard);
     }
