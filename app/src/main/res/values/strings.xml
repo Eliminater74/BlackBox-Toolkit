@@ -45,7 +45,7 @@
 
     <!-- Tabs -->
     <string name="frequency_table">Frequency Table</string>
-    <string name="kernel_information">Kernel Information</string>
+    <string name="kernel_information">BlackBox Information</string>
     <string name="cpu">CPU</string>
     <string name="cpu_voltage">CPU Voltage</string>
     <string name="cpu_hotplug">CPU Hotplug</string>
