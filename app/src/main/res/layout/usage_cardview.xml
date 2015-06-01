@@ -9,7 +9,7 @@
     android:paddingRight="16dp"
     android:paddingTop="16dp">
 
-    <com.grarak.kerneladiutor.elements.CircleChart
+    <com.kunalkene1797.blackboxkit.elements.CircleChart
         android:id="@+id/circle_chart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

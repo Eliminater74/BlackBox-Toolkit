@@ -42,7 +42,7 @@
         </LinearLayout>
     </FrameLayout>
 
-    <com.grarak.kerneladiutor.elements.CustomViewPager
+    <com.kunalkene1797.blackboxkit.elements.CustomViewPager
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

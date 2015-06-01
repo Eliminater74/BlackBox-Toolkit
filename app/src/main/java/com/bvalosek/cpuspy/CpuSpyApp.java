@@ -9,7 +9,7 @@ package com.bvalosek.cpuspy;
 import android.app.Application;
 import android.content.Context;
 
-import com.grarak.kerneladiutor.utils.Utils;
+import com.kunalkene1797.blackboxkit.utils.Utils;
 
 import java.util.HashMap;
 import java.util.Map;

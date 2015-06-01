@@ -21,7 +21,7 @@
             app:contentInsetLeft="72dp"
             app:contentInsetStart="72dp" />
 
-        <com.grarak.kerneladiutor.elements.SlidingTabLayout
+        <com.kunalkene1797.blackboxkit.elements.SlidingTabLayout
             android:id="@+id/sliding_tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

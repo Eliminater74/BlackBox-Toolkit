@@ -11,8 +11,8 @@ package com.bvalosek.cpuspy;
 import android.os.SystemClock;
 import android.support.annotation.NonNull;
 
-import com.grarak.kerneladiutor.utils.Constants;
-import com.grarak.kerneladiutor.utils.Utils;
+import com.kunalkene1797.blackboxkit.utils.Constants;
+import com.kunalkene1797.blackboxkit.utils.Utils;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
