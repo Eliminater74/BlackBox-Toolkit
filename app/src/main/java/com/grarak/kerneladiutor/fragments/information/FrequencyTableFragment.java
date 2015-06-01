@@ -119,6 +119,38 @@ public class FrequencyTableFragment extends RecyclerViewFragment implements Cons
     }
 
     /**
+	     * called to handle a menu event
+     */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // what it do maybe
+        switch (item.getItemId()) {
+        /* pressed the load menu button */
+            case R.id.menu_refresh:
+                refreshData();
+                break;
+            case R.id.menu_reset:
+                try {
+                    cpuSpyApp.getCpuStateMonitor().setOffsets();
+                } catch (CpuStateMonitor.CpuStateMonitorException e) {
+                    e.printStackTrace();
+                }
+
+                cpuSpyApp.saveOffsets(getActivity());
+                updateView();
+                break;
+            case R.id.menu_restore:
+                cpuSpyApp.getCpuStateMonitor().removeOffsets();
+                cpuSpyApp.saveOffsets(getActivity());
+                updateView();
+                break;
+        }
+
+        // made it
+        return true;
+    }
+
+    /**
      * Generate and update all UI elements
      */
     private void updateView() {
