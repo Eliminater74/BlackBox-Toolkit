@@ -20,29 +20,35 @@ import android.os.Bundle;
 
 import com.kunalkene1797.blackboxkit.R;
 import com.kunalkene1797.blackboxkit.elements.CardViewItem;
+import com.kunalkene1797.blackboxkit.elements.UsageCardView;
 import com.kunalkene1797.blackboxkit.fragments.RecyclerViewFragment;
+import com.kunalkene1797.blackboxkit.fragments.kernel.CPUFragment;
 import com.kunalkene1797.blackboxkit.utils.Utils;
+import com.kunalkene1797.blackboxkit.utils.kernel.CPU;
 import com.kunalkene1797.blackboxkit.utils.kernel.Info;
+
 /**
  * Created by willi on 20.12.14.
  */
 public class KernelInformationFragment extends RecyclerViewFragment {
+    private CardViewItem.DCardView mTempCard;
+    private static CPUFragment cpuFragment;
+    private static CPUFragment.GovernorPart governorPart;
 
     private final String UPDATE_SOURCE = "http://kunalkene1797.in/downloads/";
+
     @Override
     public boolean showApplyOnBoot() {
         return false;
     }
 
-    /**
-     * called when we want to inflate the menu
-     */
-
     @Override
 
     public void init(Bundle savedInstanceState) {
 
+
         super.init(savedInstanceState);
+        if (CPU.hasTemp()) tempInit();
 
         CardViewItem.DCardView kernelVersionCard = new CardViewItem.DCardView();
         kernelVersionCard.setTitle(getString(R.string.kernel_version));
@@ -72,9 +78,17 @@ public class KernelInformationFragment extends RecyclerViewFragment {
 
         addView(kernelVersionCard);
         addView(deviceNameCard);
+        addView(mTempCard);
         addView(kernelUpdateCard);
         addView(cpuCard);
         addView(memCard);
+    }
+
+    private void tempInit() {
+        mTempCard = new CardViewItem.DCardView();
+        mTempCard.setTitle(getString(R.string.cpu_temp));
+        mTempCard.setDescription(CPU.getTemp());
+
     }
 
 }
