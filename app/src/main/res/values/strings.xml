@@ -45,7 +45,7 @@
 
     <!-- Tabs -->
     <string name="frequency_table">Frequency Table</string>
-    <string name="kernel_information">BlackBox Information</string>
+    <string name="kernel_information">BlackBox Dashboard</string>
     <string name="cpu">CPU</string>
     <string name="cpu_voltage">CPU Voltage</string>
     <string name="cpu_hotplug">CPU Hotplug</string>
@@ -78,6 +78,7 @@
 
     <!-- Kernel Information -->
     <string name="kernel_version">BlackBox Kernel Version</string>
+	<string name="device_name">Device Information</string>
 	<string name="update_version">BlackBox Updater</string>
 	<string name="update_version_information">Update You BlackBox Kernel. Click This Card To Proceed and get the latest version of BlackBox Kernel.</string>
     <string name="cpu_information">CPU Information</string>
@@ -595,10 +596,10 @@
 	<string name="core_app">Application Core</string>
 	<string name="core_app_summary">This applications core is partially powered by "Kernel Adiutor" The Open Source App. Then Developed And Tweaked by Kunal Kene.</string>
 	<string name="dev">Kernel Developer</string>
-	<string name="dev_summary">Kunal Kene (kunalkene1797) is the developer of Blackbox Kernel Series. Click to visit my official Blog.</string>
+	<string name="dev_summary">Kunal Kene (kunalkene1797) is the developer of BlackBox Kernel Series. Click to visit my official Blog.</string>
     <string name="open_source">Open source</string>
-    <string name="open_source_summary">This application is open source. Check it out on my Github.</string>
+    <string name="open_source_summary">This application is open source. Check it out on Github.</string>
     <string name="feature_request">Feature request</string>
-    <string name="feature_request_summary">Do you want more features? Tell me on my Blog.</string>
+    <string name="feature_request_summary">Do you want more features? Ping me on my Official Blog.</string>
 
 </resources>

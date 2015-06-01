@@ -52,7 +52,7 @@ public class SettingsFragment extends RecyclerViewFragment {
     public void init(Bundle savedInstanceState) {
         super.init(savedInstanceState);
 
-        darkthemeInit();
+
         if (!Resources.getSystem().getConfiguration().locale.getLanguage().startsWith("en"))
             forceenglishlanguageInit();
         if (Constants.VERSION_NAME.contains("beta")) betainfoInit();
@@ -60,20 +60,6 @@ public class SettingsFragment extends RecyclerViewFragment {
         debuggingInit();
     }
 
-    private void darkthemeInit() {
-        SwitchCardView.DSwitchCard mDarkthemeCard = new SwitchCardView.DSwitchCard();
-        mDarkthemeCard.setDescription(getString(R.string.dark_theme));
-        mDarkthemeCard.setChecked(Utils.DARKTHEME);
-        mDarkthemeCard.setOnDSwitchCardListener(new SwitchCardView.DSwitchCard.OnDSwitchCardListener() {
-            @Override
-            public void onChecked(SwitchCardView.DSwitchCard dSwitchCard, boolean checked) {
-                Utils.saveBoolean("darktheme", checked, getActivity());
-                startActivity(new Intent(getActivity(), MainActivity.class));
-            }
-        });
-
-        addView(mDarkthemeCard);
-    }
 
     private void forceenglishlanguageInit() {
         SwitchCardView.DSwitchCard mForceEnglishLanguageCard = new SwitchCardView.DSwitchCard();

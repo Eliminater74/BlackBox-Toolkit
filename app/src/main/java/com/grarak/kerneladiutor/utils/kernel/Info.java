@@ -27,6 +27,9 @@ public class Info implements Constants {
     public static String getMemInfo() {
         return Utils.readFile(PROC_MEMINFO);
     }
+    public static String getDeviceName() {
+        return Utils.DEVICE_NAME;
+    }
 
     public static String getCpuInfo() {
         return Utils.readFile(PROC_CPUINFO);

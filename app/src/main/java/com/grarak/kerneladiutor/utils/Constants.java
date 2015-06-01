@@ -18,9 +18,11 @@ package com.grarak.kerneladiutor.utils;
 
 import com.grarak.kerneladiutor.BuildConfig;
 import com.grarak.kerneladiutor.elements.DAdapter;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import android.os.Build;
+import android.os.Bundle;
 
 /**
  * Created by willi on 30.11.14.
@@ -34,6 +36,7 @@ public interface Constants {
     List<DAdapter.DView> ITEMS = new ArrayList<>();
 
     // Device Information
+    String DEVICE_NAME = android.os.Build.MANUFACTURER + " " + android.os.Build.MODEL + " (" + android.os.Build.DEVICE.toUpperCase() + ")";
 
     // Kernel Informations
     String PROC_VERSION = "/proc/version";
