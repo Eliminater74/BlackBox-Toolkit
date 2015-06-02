@@ -84,7 +84,7 @@ public class CPUFragment extends ViewPagerFragment implements Constants {
             SeekBarCardView.DSeekBarCardView.OnDSeekBarCardListener,
             SwitchCardView.DSwitchCard.OnDSwitchCardListener {
 
-        private UsageCardView.DUsageCard mUsageCard;
+
 
         private AppCompatCheckBox[] mCoreCheckBox;
         private ProgressBar[] mCoreProgressBar;
@@ -123,7 +123,7 @@ public class CPUFragment extends ViewPagerFragment implements Constants {
             super.init(savedInstanceState);
             onScrollDisappearView = cpuFragment.applyOnBootLayout;
 
-            usageInit();
+
             if (CPU.getFreqs() != null) coreInit();
             if (CPU.hasTemp()) tempInit();
             if (CPU.getFreqs() != null) freqInit();
@@ -133,14 +133,6 @@ public class CPUFragment extends ViewPagerFragment implements Constants {
             if (CPU.hasCFSScheduler()) cfsSchedulerInit();
             if (CPU.hasCpuQuiet()) cpuQuietInit();
             if (CPU.hasCpuBoost()) cpuBoostInit();
-        }
-
-        private void usageInit() {
-            mUsageCard = new UsageCardView.DUsageCard();
-            mUsageCard.setText(getString(R.string.cpu_usage));
-            addView(mUsageCard);
-
-            getHandler().post(cpuUsage);
         }
 
         private void coreInit() {
@@ -457,35 +449,7 @@ public class CPUFragment extends ViewPagerFragment implements Constants {
             return true;
         }
 
-        private final Runnable cpuUsage = new Runnable() {
-            @Override
-            public void run() {
-                if (mUsageCard != null)
-                    new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            final float usage = CPU.getCpuUsage();
-                            try {
-                                getActivity().runOnUiThread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        mUsageCard.setProgress(Math.round(usage));
-                                    }
-                                });
-                            } catch (NullPointerException ignored) {
-                            }
-                        }
-                    }).start();
 
-                getHandler().postDelayed(cpuUsage, 3000);
-            }
-        };
-
-        @Override
-        public void onDestroy() {
-            super.onDestroy();
-            getHandler().removeCallbacks(cpuUsage);
-        }
 
     }
 
